@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/interview.css">
+
+<div id="wrapper">
+    <div>
+        <h1>Schedule Interview</h1>
+    </div>
+
+    <form id="interviewForm" action="/interview/add" method="post">
+        <div class="row">
+            <div class="col">
+                <input type="text" name="company" class="form-control" placeholder="Company Name">
+            </div>
+            <div class="col">
+                <input type="date" name="date" class="form-control" id="batch" name="batch" value="2023-07-23">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Interview</button>
+        </div>
+    </form>
+    <div>
+        <h1>Interviews</h1>
+    </div>
+    <ul id="interview-list">
+        <% for (const interview of interviews) { %>
+           
+            <li class="interview"  id="<%= interview._id %>">
+                <div class="interview-container" data-interview-id="<%= interview._id %>">
+                <span class="inline">
+                    <h2> Company:</h2>
+                    <h4>
+                        <%= interview.company %>
+                    </h4>
+                </span>
+                <span class="inline">
+                    <h2> Date:</h2>
+                    <h4>
+                        <%= interview.date.toLocaleDateString(undefined, { day: 'numeric' , month: 'long' ,
+                            year: 'numeric' }) %>
+                    </h4>
+                </span>
+                <span class="inline interview-span" data-interview-id="<%= interview._id %>">
+                    <h2> Allocate Interview: </h2>
+                    <input type="text" class="form-control student-input" placeholder="Enter Student ID">
+                    <button type="submit" class="btn btn-primary allocate-interview">Allocate</button>
+                </span>
+                </div>
+            </li>
+            
+            <% } %>
+    </ul>
+</div>
+<script src="/scripts/interview.js"></script>

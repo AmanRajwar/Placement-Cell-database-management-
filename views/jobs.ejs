@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/css/jobs.css">
+<div id="wrapper">
+    <!-- <section id="header">
+        <h1>Job Listings</h1>
+        
+    <form id="search-jobs" action="/jobs/search" method="post">
+        <div class="row">
+            <div class="col">
+                <input type="text" id="searchInput" name="search" class="form-control" placeholder="Search by location" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+    </section> -->
+        <% for (const job of jobs) { %>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="<%=job.employer_logo  %>" alt="company Image">
+                <div class="card-body">
+                    <h5 class="card-title"><%=job.employer_name  %></h5>
+                    <h6 class="card-title"><%=job.job_title  %></h6>
+                    <h6 class="card-title"><%=job.job_city  %></h6>
+                    <p class="card-text"><%=job.job_description  %></p>
+                    <a href="<%=job.job_apply_link %>" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
+            <% } %>
+      
+</div>
+<script src="/scripts/jobs.js"></script>

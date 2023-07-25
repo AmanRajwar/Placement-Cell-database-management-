@@ -1,0 +1,73 @@
+#wrapper{
+    margin-top: 30px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#wrapper form{
+    margin-top: 30px;
+    width: 70%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom:30px;
+
+}
+#interview-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 90%;
+    width: 100%;
+}
+
+
+.interview{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    margin: 0 20px;
+    padding: 20px 0;
+    
+}
+.inline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.interview-container {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    /* border-bottom: 1px solid gray; */
+    padding-bottom: 20px;
+}
+
+.result-list {
+    list-style: none;
+    width: 80%;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.result-list li {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid gray;
+    margin: 5px;
+}
+
+

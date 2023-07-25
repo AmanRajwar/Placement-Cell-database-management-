@@ -1,0 +1,40 @@
+<form style="width: 70%;" action="/students/add-student" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="college">College Name</label>
+            <input type="text" class="form-control" id="college" name="college" placeholder="Your College">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="DSA_Score">DSA Score</label>
+            <input type="number" class="form-control" id="dsa" name="DSA_Score" placeholder="Score">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="WebD_Score">WebD Score</label>
+            <input type="number" class="form-control" id="web" name="WebD_Score" placeholder="Score">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="react">React Score</label>
+            <input type="number" class="form-control" id="react" name="React_Score" placeholder="Score">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="status">Status</label>
+            <select id="status" name="status" class="form-control">
+                <option selected>Choose...</option>
+                <option value="placed">Placed</option>
+                <option value="not_placed">Not Placed</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="start">Batch</label>
+            <input type="date" class="form-control" id="batch" name="batch" value="2023-07-23">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</form>

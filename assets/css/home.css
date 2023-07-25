@@ -1,0 +1,47 @@
+
+#students-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+}
+
+
+.student{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    margin: 0 20px;
+    padding: 20px 0;
+    
+}
+
+.right-side{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-side{
+ display: flex;
+ flex-direction: column;
+ width: 50%;
+ justify-content: center;
+ align-items: center;
+
+}
+
+
+.inline{
+    display:flex;
+    gap: 10px;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
