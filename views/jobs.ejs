@@ -1,17 +1,6 @@
 <link rel="stylesheet" href="/css/jobs.css">
 <div id="wrapper">
-    <!-- <section id="header">
-        <h1>Job Listings</h1>
-        
-    <form id="search-jobs" action="/jobs/search" method="post">
-        <div class="row">
-            <div class="col">
-                <input type="text" id="searchInput" name="search" class="form-control" placeholder="Search by location" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-    </form>
-    </section> -->
+
         <% for (const job of jobs) { %>
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="<%=job.employer_logo  %>" alt="company Image">

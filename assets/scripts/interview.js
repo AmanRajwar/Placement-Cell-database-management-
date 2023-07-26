@@ -25,47 +25,39 @@ $(document).ready(() => {
         const day = date.toLocaleString('default', { day: 'numeric' });
         const month = date.toLocaleString('default', { month: 'long' });
         const year = date.getFullYear();
+        return `${month} ${day}, ${year}`; // Return the formatted date as "Day Month Year" (e.g., "21 July 2023")
 
-        // Return the formatted date as "Day Month Year" (e.g., "21 July 2023")
-        return `${month} ${day}, ${year}`;
     }
-
-
 
 
 
     //function to add a interview and render it on the page
     function addInterview(data) {
-        console.log(data);
-        const interviewDate = new Date(data.date);
-        console.log(interviewDate);
         const ulTag = $('#interview-list')
-        const liElement = `<li class="interview" id = ${data._id}>
-                     <span class="inline">
-                     <h2> Company:</h2>
-                     <h4>
-                        ${data.company}
-                     </h4>
-                 </span>
-                 <span class="inline">
-                     <h2> Date:</h2>
-                     <h4>
-                     ${getFormattedDate(data.date)}
-                     </h4>
-                 </span>
-                </li>`
+        const liElement = `  <li class="interview"  id="${data._id}">
+        <div class="interview-container" data-interview-id="${data._id}">
+        <span class="inline">
+            <h2> Company:</h2>
+            <h4>
+            ${data.company}
+            </h4>
+        </span>
+        <span class="inline">
+            <h2> Date:</h2>
+            <h4>
+            ${getFormattedDate(data.date)}
+            </h4>
+        </span>
+        <span class="inline interview-span" data-interview-id=" ${data._id}">
+            <h2> Allocate Interview: </h2>
+            <input type="text" class="form-control student-input" placeholder="Enter Student ID">
+            <button type="submit" class="btn btn-primary allocate-interview">Allocate</button>
+        </span>
+        </div>
+    </li>`
 
 
         ulTag.append(liElement);
-    }
-
-
-    async function updateResult(selectElement) {
-        const studentId = selectElement.getAttribute('data-student-id');
-        const interviewId = selectElement.getAttribute('data-interview-id');
-        const result = selectElement.value;
-        console.log(studentId, interviewId, result);
-        // Now you can proceed with your update logic, either using makePostCall or any other method
     }
 
 
@@ -75,8 +67,8 @@ $(document).ready(() => {
           if (liElement) {
             const existingList = liElement.querySelector('ul.result-list');
             if (existingList) {
-              // Handle the click event on the list to prevent it from propagating
-              existingList.addEventListener('click', (event) => event.stopPropagation());
+              // // Handle the click event on the list to prevent it from propagating
+              // existingList.addEventListener('click', (event) => event.stopPropagation());
               liElement.removeChild(existingList);
             } else {
            

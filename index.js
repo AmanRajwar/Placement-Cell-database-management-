@@ -29,6 +29,27 @@ app.set('view engine', 'ejs');
 app.set('views', './views')
 
 
+app.use(session({
+    name:'info',
+    secret:'tufani',
+    resave:false,
+    saveUninitialized:false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    },
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://127.0.0.1/placement_cell',
+        ttl: 14 * 24 * 60 * 60,
+        autoRemove: 'disabled'
+    })
+}))
+
+
+// Configure Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 app.use('/', require('./routes'))
 app.listen(port, function (err) {

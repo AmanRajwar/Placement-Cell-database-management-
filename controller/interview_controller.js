@@ -53,11 +53,6 @@ module.exports.allocateStudent = async (req, res) => {
 
     await studentExists.save();
     await interviewExists.save();
-
-    // Populate interviewResults for the student and interview
-    //     const populatedStudent = await studentExists.populate('interviewResults');
-    //     const populatedInterview = await interviewExists.populate('interviewResults');
-    // console.log(populatedStudent);
     return res.status(200).json({ message: "Student scheduled for interview successfully" });
   } catch (error) {
     console.log("Failed to allocate student to an interview--->", error);
@@ -68,10 +63,8 @@ module.exports.allocateStudent = async (req, res) => {
 
 
 module.exports.getResults = async (req, res) => {
-  // console.log("hihhihihih",req.query.interviewId)
   try {
     const { interviewId } = req.query;
-    console.log(interviewId)
     const interview = await Interview.findById(interviewId)
       .populate({
         path: 'interviewResults',

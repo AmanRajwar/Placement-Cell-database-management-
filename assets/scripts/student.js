@@ -2,6 +2,9 @@
 $(document).ready(function () {
   let url = '/';
   let offset = 10; // Initial offset for the next batch of students
+
+
+
 $('#student').addClass('active')
   
 
@@ -110,7 +113,9 @@ $('#student').addClass('active')
   async function updateStatus(data){
     url ='/students/update-data';
     const response= await makePostCall(url,data);
-    
+    if(response.message){
+      console.log(response.message);
+    }
   }
 
 // Add event listener to handle changes in the select elements
@@ -129,7 +134,6 @@ $('#students-list').on('change', '.status-select', function () {
 
 
   $(window).scroll(function () {
-    console.log("nitin");
     if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
 
       // User has scrolled to the bottom of the page, load more students

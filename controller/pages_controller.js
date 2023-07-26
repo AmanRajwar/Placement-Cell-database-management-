@@ -19,7 +19,8 @@ module.exports.renderInterviews = async (req, res) => {
 
     return res.render('interview', {
       title: "Interviews",
-      interviews: interviews
+      interviews: interviews,
+      showHeader:true
     });
 
   } catch (error) {
@@ -31,7 +32,8 @@ module.exports.renderInterviews = async (req, res) => {
 module.exports.addStudentPage = async (req, res) => {
   // console.log('reached to pages controller')
   return res.render('add_student', {
-    title: "Add student"
+    title: "Add student",
+    showHeader:true
   })
 }
 
@@ -46,10 +48,11 @@ module.exports.getJobs = async (req, res) => {
   
     return res.render('jobs', {
       title: "Jobs Portal",
-      jobs: result.data
+      jobs: result.data,
+      showHeader:true
     })
   } catch (error) {
-    console.error(error);
+    console.error("Error in fetching the jobs",error);
     return res.redirect('back')
   }
 }

@@ -4,8 +4,6 @@ const Student = require('../models/students');
 
 
 module.exports.addStudent = async (req, res) => {
-
-  console.log(req.body)
   try {
     const { name, batch, college, status, DSA_Score, WebD_Score, React_Score } = req.body;
 
@@ -62,7 +60,6 @@ module.exports.getStudents = async (req, res) => {
 
 module.exports.updateData = async (req, res) => {
   try {
-    console.log(req.body);
     const { studentId, status } = req.body;
     const updatedStudent = await Student.findByIdAndUpdate(studentId, {
       $set: {
@@ -81,9 +78,6 @@ module.exports.updateData = async (req, res) => {
 }
 
 
-// module.exports.addStudent =async(req,res)=>{
-
-// }
 
 
 

@@ -8,8 +8,6 @@ passport.use(new LocalStrategy({
     usernameField: 'email',
     passReqToCallback: true
 }, async (req, email, password, done) => {
-console.log("email");
-    // console.log("passpost_local_strategy ---->", email);
 
     try {
         //first find the user in the database if exist
@@ -30,13 +28,11 @@ console.log("email");
 
 // to save a specific key in the session cookie ---> serialize the user
 passport.serializeUser((user, done) => {
-    // console.log("passport_local_strategy---> serializeUser---->", user)
     done(null, user.id);
 })
 
 // to get the whole user object when required ---> deserializeUser
 passport.deserializeUser(async (id, done) => {
-    // console.log("passport_local_strategy---> deserialize user---->", id)
     try {
         //first find the user in the database if exist
         const user = await User.findById(id);

@@ -7,8 +7,7 @@ function getFormattedDate(dateString) {
     const date = new Date(dateString);
     const month = date.toLocaleString('default', { month: 'long' });
     const year = date.getFullYear();
-    // Return the formatted date as "Month Year" (e.g., "July 2023")
-    return `${month} ${year}`;
+    return `${month} ${year}`;  // Return the formatted date as "Month Year" (e.g., "July 2023")
   }
 
 
@@ -22,6 +21,7 @@ module.exports.home = async (req, res) => {
         return res.render('students', {
             title: "Students Database",
             students: student,
+            showHeader:true,
             formatDate:getFormattedDate
         })
     } catch (err) {

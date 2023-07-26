@@ -17,11 +17,12 @@
 </head>
 
 <body>
-    <%- include('_header'); %>
+    <% if (showHeader) { %>
+        <%- include('_header'); %>
+    <% } %>
         <main>
             <%- body %>
         </main>
-        <%- include('_footer'); %>
 
 
         
